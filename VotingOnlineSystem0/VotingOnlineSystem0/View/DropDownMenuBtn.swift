@@ -6,8 +6,9 @@
 //
 
 import UIKit
+@IBDesignable
 
-class DropMenuBtnView: UIButton {
+class DropDownMenuBtn: UIButton {
 
     override func draw(_ rect: CGRect) { // (ˇ) DRAW
         let size = 14

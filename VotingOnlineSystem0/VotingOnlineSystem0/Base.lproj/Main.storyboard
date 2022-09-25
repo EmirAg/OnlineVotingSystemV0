@@ -64,7 +64,8 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="392-K8-Uqd" kind="presentation" modalPresentationStyle="fullScreen" id="JFA-KX-N2W"/>
+                                    <action selector="submitBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dxs-Dz-0fO"/>
+                                    <segue destination="392-K8-Uqd" kind="presentation" identifier="infoVC" modalPresentationStyle="fullScreen" id="JFA-KX-N2W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,15 +84,18 @@
                             <constraint firstItem="urg-eq-eVL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="uun-2M-I2s"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fullNameTxt" destination="2EM-YW-od2" id="O5M-h7-rqn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="129" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--InfoVC-->
         <scene sceneID="M22-Fg-k9e">
             <objects>
-                <viewController id="392-K8-Uqd" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoVc" id="392-K8-Uqd" customClass="InfoVC" customModule="VotingOnlineSystem0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2oM-f9-td2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,9 +126,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="please, Fill the information below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-bk-iCe">
-                                <rect key="frame" x="110" y="212" width="194" height="21"/>
+                                <rect key="frame" x="114" y="212" width="186" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="194" id="ogl-Bz-Erh"/>
                                     <constraint firstAttribute="height" constant="21" id="rb7-hu-Ppa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -144,14 +147,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Department" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mk1-l8-cWJ">
                                 <rect key="frame" x="83" y="369" width="82" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="82" id="Cyx-Tt-26Y"/>
                                     <constraint firstAttribute="height" constant="18" id="mk5-WP-vIp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-Aa-m5u" customClass="DropMenuBtnView" customModule="VotingOnlineSystem0" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsc-Aa-m5u" customClass="DropDownMenuBtn" customModule="VotingOnlineSystem0" customModuleProvider="target">
                                 <rect key="frame" x="73" y="398" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -163,6 +165,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="choose department">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectDepartmentBtnPressed:" destination="392-K8-Uqd" eventType="touchUpInside" id="8WJ-eE-V9N"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SR-RB-kL9" customClass="BtnRadius" customModule="VotingOnlineSystem0" customModuleProvider="target">
                                 <rect key="frame" x="87" y="758" width="240" height="43"/>
@@ -172,7 +177,7 @@
                                     <constraint firstAttribute="width" constant="240" id="aF5-fm-UA3"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Submit">
+                                <buttonConfiguration key="configuration" style="plain" title="Next">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
@@ -187,7 +192,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwr-pI-AiV" customClass="DropMenuBtnView" customModule="VotingOnlineSystem0" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwr-pI-AiV" customClass="DropDownMenuBtn" customModule="VotingOnlineSystem0" customModuleProvider="target">
                                 <rect key="frame" x="73" y="478" width="268" height="35"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -199,16 +204,22 @@
                                 <buttonConfiguration key="configuration" style="plain" title="choose class">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectClassBtnPressed:" destination="392-K8-Uqd" eventType="touchUpInside" id="WqM-lz-HwT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKD-v8-2sR" customClass="BtnRadius" customModule="VotingOnlineSystem0" customModuleProvider="target">
-                                <rect key="frame" x="28" y="55" width="64" height="38"/>
+                                <rect key="frame" x="28" y="55" width="58" height="36"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.83529411760000005" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="64" id="BfM-yq-ceb"/>
-                                    <constraint firstAttribute="height" constant="38" id="SsK-Gl-0Af"/>
+                                    <constraint firstAttribute="width" constant="58" id="BfM-yq-ceb"/>
+                                    <constraint firstAttribute="height" constant="36" id="SsK-Gl-0Af"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="backButton"/>
+                                <connections>
+                                    <segue destination="dNT-d2-I6j" kind="unwind" unwindAction="unwindFromInfoVCWithUnwindSegue:" id="9GB-9y-c0g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RbI-oW-3rR"/>
@@ -239,24 +250,39 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="u0v-yW-JeI"/>
+                    <connections>
+                        <outlet property="greetingLbl" destination="B1F-kR-E2b" id="4na-SX-gEr"/>
+                        <outlet property="selectCalssBtn" destination="gwr-pI-AiV" id="how-tm-o0R"/>
+                        <outlet property="selectDepartmentBtn" destination="gsc-Aa-m5u" id="8Gg-eO-Gbd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTg-Wd-D56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dNT-d2-I6j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="109.82142857142857"/>
         </scene>
     </scenes>
     <designables>
         <designable name="2EM-YW-od2">
-            <size key="intrinsicContentSize" width="118" height="25"/>
+            <size key="intrinsicContentSize" width="128" height="25"/>
         </designable>
         <designable name="6SR-RB-kL9">
-            <size key="intrinsicContentSize" width="86" height="35.5"/>
+            <size key="intrinsicContentSize" width="64.5" height="35.5"/>
         </designable>
         <designable name="ROu-oZ-3g6">
-            <size key="intrinsicContentSize" width="81.5" height="25"/>
+            <size key="intrinsicContentSize" width="91.5" height="25"/>
+        </designable>
+        <designable name="gsc-Aa-m5u">
+            <size key="intrinsicContentSize" width="135" height="28.5"/>
+        </designable>
+        <designable name="gwr-pI-AiV">
+            <size key="intrinsicContentSize" width="97.5" height="28.5"/>
         </designable>
         <designable name="iZ1-Nd-gWB">
             <size key="intrinsicContentSize" width="86" height="35.5"/>
+        </designable>
+        <designable name="rKD-v8-2sR">
+            <size key="intrinsicContentSize" width="53" height="38"/>
         </designable>
     </designables>
     <resources>

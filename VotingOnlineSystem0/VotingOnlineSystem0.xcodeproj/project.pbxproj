@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03BA77A128E08A67009DB786 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA77A028E08A67009DB786 /* Student.swift */; };
 		03C5667028E0671B00B32922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5666F28E0671B00B32922 /* AppDelegate.swift */; };
 		03C5667228E0671B00B32922 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5667128E0671B00B32922 /* SceneDelegate.swift */; };
 		03C5667428E0671B00B32922 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5667328E0671B00B32922 /* LoginVC.swift */; };
@@ -15,10 +16,12 @@
 		03C5667C28E0671D00B32922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C5667A28E0671D00B32922 /* LaunchScreen.storyboard */; };
 		03C5668628E06A3700B32922 /* LoginTxtField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5668528E06A3700B32922 /* LoginTxtField.swift */; };
 		03C5668828E06DC700B32922 /* BtnRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5668728E06DC700B32922 /* BtnRadius.swift */; };
-		03C5668A28E07C8B00B32922 /* DropMenuBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5668928E07C8B00B32922 /* DropMenuBtnView.swift */; };
+		03C5668A28E07C8B00B32922 /* DropDownMenuBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5668928E07C8B00B32922 /* DropDownMenuBtn.swift */; };
+		03C5668C28E080D400B32922 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C5668B28E080D400B32922 /* InfoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03BA77A028E08A67009DB786 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		03C5666C28E0671B00B32922 /* VotingOnlineSystem0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VotingOnlineSystem0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C5666F28E0671B00B32922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03C5667128E0671B00B32922 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +32,8 @@
 		03C5667D28E0671D00B32922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C5668528E06A3700B32922 /* LoginTxtField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTxtField.swift; sourceTree = "<group>"; };
 		03C5668728E06DC700B32922 /* BtnRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnRadius.swift; sourceTree = "<group>"; };
-		03C5668928E07C8B00B32922 /* DropMenuBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropMenuBtnView.swift; sourceTree = "<group>"; };
+		03C5668928E07C8B00B32922 /* DropDownMenuBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenuBtn.swift; sourceTree = "<group>"; };
+		03C5668B28E080D400B32922 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03BA779F28E08A46009DB786 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03BA77A028E08A67009DB786 /* Student.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		03C5666328E0671B00B32922 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +74,7 @@
 		03C5666E28E0671B00B32922 /* VotingOnlineSystem0 */ = {
 			isa = PBXGroup;
 			children = (
+				03BA779F28E08A46009DB786 /* Model */,
 				03C5668428E06A0E00B32922 /* View */,
 				03C5668328E069B300B32922 /* Controller */,
 				03C5666F28E0671B00B32922 /* AppDelegate.swift */,
@@ -78,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				03C5667328E0671B00B32922 /* LoginVC.swift */,
+				03C5668B28E080D400B32922 /* InfoVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -87,7 +101,7 @@
 			children = (
 				03C5668528E06A3700B32922 /* LoginTxtField.swift */,
 				03C5668728E06DC700B32922 /* BtnRadius.swift */,
-				03C5668928E07C8B00B32922 /* DropMenuBtnView.swift */,
+				03C5668928E07C8B00B32922 /* DropDownMenuBtn.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,9 +180,11 @@
 				03C5667428E0671B00B32922 /* LoginVC.swift in Sources */,
 				03C5668828E06DC700B32922 /* BtnRadius.swift in Sources */,
 				03C5667028E0671B00B32922 /* AppDelegate.swift in Sources */,
+				03C5668C28E080D400B32922 /* InfoVC.swift in Sources */,
 				03C5667228E0671B00B32922 /* SceneDelegate.swift in Sources */,
 				03C5668628E06A3700B32922 /* LoginTxtField.swift in Sources */,
-				03C5668A28E07C8B00B32922 /* DropMenuBtnView.swift in Sources */,
+				03C5668A28E07C8B00B32922 /* DropDownMenuBtn.swift in Sources */,
+				03BA77A128E08A67009DB786 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
